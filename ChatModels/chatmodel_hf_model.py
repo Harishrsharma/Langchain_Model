@@ -3,9 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 #when creating an OPen source model we have to create llm to choose and initiate the model
-llm = HuggingFaceEndpoint(
-    repo_id= "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-    task = "text-generation"
+llm =HuggingFaceEndpoint(
+    repo_id="deepseek-ai/DeepSeek-R1",
+    provider="together"  # specify a provider that actually hosts the model
 )
 
 model = ChatHuggingFace(llm=llm)
