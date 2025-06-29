@@ -8,11 +8,15 @@ llm =HuggingFaceEndpoint(
     provider="together"  # specify a provider that actually hosts the model
 )
 
-model = ChatHuggingFace()
+model = ChatHuggingFace(llm=llm)
+
+#we have to creat a chat history so that model could remember our chat 
+chat_history = []
 
 while True:
     user_input = input('You:')
+    chat_history.append(user_input)
     if user_input == 'exit':
         break
-    result = model.invoke(user_input)
-    print("AI:",result.invoke)
+    result = model.invoke(chat_history)
+    print("AI:",result.content)
