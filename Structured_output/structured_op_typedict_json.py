@@ -51,4 +51,4 @@ json_str = raw_content[start:end]
 parsed = json.loads(json_str)
 
 # Print any field
-print(parsed["name"])
+print(parsed)
