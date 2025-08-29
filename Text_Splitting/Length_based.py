@@ -7,7 +7,7 @@ docs = loader.load()
 
 splitter = CharacterTextSplitter(
     chunk_size=400,
-    chunk_overlap=0,
+    chunk_overlap=5, #this define the overlap between 2 chunks if suppose you set this to 5 then there will be a overlapped chunk between every two chunks
     separator=''
 )
 
