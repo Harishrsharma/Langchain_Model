@@ -23,8 +23,8 @@ llm =HuggingFaceEndpoint(
 model = ChatHuggingFace(llm=llm)
 
 prompt = PromptTemplate(
-    template='Write a summary of this pdf - \n {poem}',
-    input_variables=['poem']
+    template='Write a summary of this pdf - \n {docs}',
+    input_variables=['docs']
 )
 
 parser = StrOutputParser()
@@ -41,4 +41,4 @@ print(docs[1].metadata)
 # creates a chain
 chain = prompt | model | parser
 
-print(chain.invoke({'poem':docs}))
+print(chain.invoke({'docs':docs}))
